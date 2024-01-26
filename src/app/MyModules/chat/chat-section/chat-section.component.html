@@ -1,0 +1,43 @@
+<!-- chat.component.html -->
+
+<div class="chat-container">
+  <div class="header">
+    <img class="profileImg" [src]="userProfile" alt="Profile Picture" />
+    <div>
+      <h3>{{ userName }}</h3>
+      <h5>Online</h5>
+    </div>
+  </div>
+
+  <div class="messages" #messagesContainer>
+    <div *ngFor="let message of messages">
+      <div [ngClass]="{
+            'messageContainer': true,
+            'sent': !message.received,
+            'received': message.received
+          }">
+        <div  [ngClass]="{
+              'profileAndTime':true,
+              'justifyEnd':!message.received
+        }">
+          <img *ngIf="message.received" [src]="userProfile" alt="Profile Picture" />
+          <span>{{generateDummyTimestamp()|date}}</span>
+        </div>
+        <div
+          [ngClass]="{
+            'message': true,
+            'sent-message': !message.received,
+            'received-message': message.received
+          }"
+        >
+          {{ message.text }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <textarea placeholder="Type your message..." #msg></textarea>
+    <button (click)="sendMessage(msg.value)">Send</button>
+  </div>
+</div>

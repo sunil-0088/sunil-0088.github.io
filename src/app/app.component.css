@@ -1,0 +1,20 @@
+
+
+.grid{
+    display: grid;
+    grid-template-columns: 200px auto;
+
+}
+
+.main-content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+.sidebar {
+    background: rgb(229, 221, 221);
+    height: 100vh;
+
+}
+

@@ -1,0 +1,25 @@
+<div class="chatNav">
+  <div class="header">
+  <img class="profileImg" [src]="users[2].profilePhoto" alt="Profile Picture" />
+  <h2>Chat</h2>
+</div>
+<div class="rooms">
+  <div *ngFor="let user of users; let i = index" class="message-tile">
+    <img
+      [src]="user.profilePhoto"
+      alt="{{ user.name }} Profile Photo"
+      class="profile-photo"
+    />
+    <div class="message-details">
+      <div>
+        <h4 class="userName">{{ user.name }}</h4>
+        <p class="lastMessage">{{ user.lastMessage }}</p>
+      </div>
+      <div class="userStatus">
+        <div class="status" [ngClass]="{ online: i % 2 == 0 }"></div>
+        <span class="time-stamp">{{ user.lastMessageTime }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

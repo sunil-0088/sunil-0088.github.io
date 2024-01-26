@@ -1,0 +1,24 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.first {
+      height: 100px; /* Set the fixed height for the 1st div */
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .second {
+      flex-grow: 1; /* Allow the 2nd div to take the remaining height */
+      background-color: #f1f1f1;
+      padding: 10px;
+    }
+
+    .third {
+      height: 150px; /* Set the fixed height for the 3rd div */
+      background-color: #e74c3c;
+      color: #fff;
+      padding: 10px;
+    }
